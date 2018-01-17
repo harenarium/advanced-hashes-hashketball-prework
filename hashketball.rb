@@ -134,7 +134,7 @@ def winning_team
     }
     if point_count > most_points
       most_points = point_count
-      most_points_team = team
+      most_points_team = team_info[:name]
     end
   }
   most_points_team

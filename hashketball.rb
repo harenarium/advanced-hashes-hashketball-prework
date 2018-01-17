@@ -153,3 +153,17 @@ def player_with_longest_name
   }
   most_letters_name
 end
+
+def long_name_steals_a_ton?
+  most_steals = 0
+  most_steals_name= ""
+  game_hash.each{|team, team_info|
+    team_info[:players].each{|player,info|
+      if info[:steals] >most_steals
+        most_steals = info[:steals]
+        most_steals_name = player
+      end
+    }
+  }
+  most_steals_name == player_with_longest_name
+end

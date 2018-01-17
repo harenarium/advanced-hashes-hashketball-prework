@@ -115,7 +115,8 @@ def most_points_scored
   most_points_name = ""
   game_hash.each{|team, team_info|
     team_info[:players].each{|player,info|
-      if most_points = info[:points]
+      if info[:points] > most_points
+        most_points = info[:points]
         most_points_name = player
       end
     }

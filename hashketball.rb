@@ -139,3 +139,17 @@ def winning_team
   }
   most_points_team
 end
+
+def player_with_longest_name
+  most_letters = 0
+  most_letters_name= ""
+  game_hash.each{|team, team_info|
+    team_info[:players].each{|player,info|
+      if player.length >most_letters
+        most_letters = player.length
+        most_letters_name = player
+      end
+    }
+  }
+  most_letters_name
+end
